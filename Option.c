@@ -1,3 +1,5 @@
+# include "Main.h"
+
 void menu(){
     int choix ;
 /* Choix de l'opération par l'utilisateur */    
