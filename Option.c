@@ -1,4 +1,5 @@
-# include "Main.h"
+#include <stdio.h>
+#include "Main.h"
 
 void menu(){
     int choix ;
@@ -13,7 +14,10 @@ void menu(){
     "7. Factorielle\n"
     "8. Modulo\n");
     printf("\n Option : ");
-    scanf(" %d",&choix) ;
+    do{
+        printf("Choisissez l'une des options ci-dessus 👆");
+        scanf(" %d",&choix) ;
+      }while(choix != 1|| choix != 2 || choix != 3 ||choix != 4 || choix != 5 || choix != 6 || choix != 7 ||choix != 8) ;
     
     switch(choix)
     {
@@ -50,8 +54,7 @@ void menu(){
         break ;
         
         default:
-            printf("Choisissez l'une des options ci-dessus 👆");
-        break ;
+            
     }
 }
 
@@ -68,10 +71,12 @@ float multiplication(float nombreA, float nombreB){
 }
 
 float division(float nombreA, float nombreB){
-    if (nombreB==0){
+
+    do{
         printf("le diviseur ne peut pas être nul. Entrer un nombre") ;
         scanf("%f", & nombreB);
-    }
+    }while(nombreB==0) ;
+
     return (nombreA/nombreB) ;
 }
 
@@ -91,17 +96,19 @@ float racine(float nombreA, float nombreB){
 /* On affichera que la factorielle du premier nombre */
 
 float factorielle(float nombreA){
-  int   nombre=(int)nombreA ;
-  float  res=1 ;
-    if ( nombre==1){
+  int nombre=(int)nombreA ;
+  int res=1 ;
+
+    if( nombre==1){
         res=1;
     }
     
-    else if (nombre==0){
+    else if(nombre==0){
         printf("la factorielle de 0 n'existe pas !");
     }
-    
-    for (int i=1; i<=nombre; i++){
+
+    else{
+        for(int i=1; i<=nombre; i++){
         res*=i;
     }
     
@@ -109,10 +116,13 @@ float factorielle(float nombreA){
 }
 
 float modulo(float nombreA, float nombreB){
-       while (nombreB==0){
+    do{
+
         printf("le diviseur ne peut pas être nul. Entrer un nombre : ") ;
         scanf("%f", &nombreB);
-       }
+
+      }while(nombreB==0) ;
+
         return ((int)nombreA%(int)nombreB) ;
 }
     
