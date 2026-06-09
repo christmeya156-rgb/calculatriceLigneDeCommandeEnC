@@ -1,5 +1,5 @@
 #ifndef __MAIN_H__
-# définie __MAIN_H__
+#definie __MAIN_H__
 void menu(void);
 float division(float, float) ;
 float multiplication(float, float) ;
