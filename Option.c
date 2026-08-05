@@ -72,10 +72,10 @@ float multiplication(float nombreA, float nombreB){
 
 float division(float nombreA, float nombreB){
 
-    do{
+    while(nombreB==0){
         printf("le diviseur ne peut pas être nul. Entrer un nombre") ;
         scanf("%f", & nombreB);
-    }while(nombreB==0) ;
+    }
 
     return (nombreA/nombreB) ;
 }
@@ -83,20 +83,21 @@ float division(float nombreA, float nombreB){
 /* Pour la puissance nombreA représente la base et nombreB, l'exposant. J'améliorerai cette fonction */
 
 float puissance(float nombreA, float nombreB){
-    return (float)pow((double)nombreA,(double)nombreB);
+    return float(pow(double(nombreA),double(nombreB)));
 }
 
 
 /* Pour la racine nombreA représente le nombre et nombreB, l'indice. J'améliorerai cette fonction aussi */
 
 float racine(float nombreA, float nombreB){
-     return (float)pow((double)nombreA,1.0/(double)nombreB);
+     
+     return float(pow(double(nombreA), 1.0/double(nombreB)));
 }
 
 /* On affichera que la factorielle du premier nombre */
 
 float factorielle(float nombreA){
-  int nombre=(int)nombreA ;
+  int nombre=int(nombreA) ;
   int res=1 ;
 
     if( nombre==1){
@@ -106,6 +107,9 @@ float factorielle(float nombreA){
     else if(nombre==0){
         printf("la factorielle de 0 n'existe pas !");
     }
+    
+    else if (nombre < 0){
+    	 printf("la factorielle d'un nombre negatif n'existe pas !");
 
     else{
         for(int i=1; i<=nombre; i++){
@@ -116,13 +120,14 @@ float factorielle(float nombreA){
 }
 
 float modulo(float nombreA, float nombreB){
-    do{
+    
+    while(nombreB==0){
 
         printf("le diviseur ne peut pas être nul. Entrer un nombre : ") ;
-        scanf("%f", &nombreB);
+        scanf("%f", &nombreB) ;
 
-      }while(nombreB==0) ;
+      }
 
-        return ((int)nombreA%(int)nombreB) ;
+        return int((nombreA)%int(nombreB)) ;
 }
     
