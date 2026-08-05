@@ -14,10 +14,12 @@ void menu(){
     "7. Factorielle\n"
     "8. Modulo\n");
     printf("\n Option : ");
-    do{
+    scanf(" %d",&choix) ;
+
+    while(choix < 1 || choix > 8){
         printf("Choisissez l'une des options ci-dessus 👆");
         scanf(" %d",&choix) ;
-      }while(choix != 1|| choix != 2 || choix != 3 ||choix != 4 || choix != 5 || choix != 6 || choix != 7 ||choix != 8) ;
+      }
     
     switch(choix)
     {
