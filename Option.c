@@ -130,6 +130,6 @@ float modulo(float nombreA, float nombreB){
 
       }
 
-        return int((nombreA)%int(nombreB)) ;
+        return int(int(nombreA)%int(nombreB)) ;
 }
     
